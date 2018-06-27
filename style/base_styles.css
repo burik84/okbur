@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=El+Messiri|Lora|Open+Sans|Oswald&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+/* @font-face { */
+/* font-family: 'Caveat'; /* Имя шрифта */ 
+/* src: local('Caveat'), /* проверяем наличие шрифта в ОС пользователя */ 
+/* url(../fonts/Caveat-Regular.ttf); /* если шрифт не установлен, тогда загружаем его по указанному пути */ 
+/* font-weight:normal; */
+/* font-style:normal; */
+/* } */
+body {   margin: 0; 	background-color: #f8f8f8; font-family: 'Lora', Georgia, serif; }
+button, input, select, textarea {  margin: 0;   font: inherit;  color: inherit;}
+h1, h2, h3, h4, h5, h6, p {margin-top: 0;	padding-right: 0px; padding-left: 0px; }
+h3, h4, h5, h6 {font-family: 'Open Sans', Helvetica, sans-serif;}
+aside, nav, footer, header, section { display: block;}
+nav a {	text-decoration: none;}
+nav ul {margin: 0;	padding: 0;}
+nav li {list-style-position: inside;	font: 14px, sans-serif;	padding: 10px;}
+h1, h2 {font-family: 'Caveat', cursive;}
+/*Шапка*/
+/* #apDiv1 {
+	margin-top: 35px;
+	margin-left: 30px;
+	position: absolute;
+	z-index: 1;
+} */
+.navbar {
+	padding: 5px 0;
+	max-width: 960px;
+	margin: 0 auto; 
+	border-top: 5px solid #F5E86D;
+	}
+form[name="search"] {	float: right;}
+input[type="text"] {
+	background-color: #f3f3f3;
+	border: 1px solid #e7e7e7;
+	height: 30px;
+	color: #b2b2b2;
+	padding: 0 10px;
+	vertical-align: top;
+	border-radius: 4px;
+}
+button {
+	color: #fff;
+	background-color: #29E696;
+	border: none;
+	height: 32px;
+	border-radius: 4px;
+	}
+
+/*Основное тело*/
+.container { 	max-width: 960px;	margin: 0 auto;
+	/* border-left: 2px solid #090; */
+	/* border-right: 2px solid #090; */
+	/* border-bottom: 2px solid #090; */
+	/* border-top: 2px solid #090; */
+}
+/*Верхний баннер или картинка*/
+header {
+	height: 130px;
+	/* background-image: url(images/banner.jpg); */
+	background-repeat: no-repeat;
+	/* [disabled]width: 950px; */
+	background-color: #F5E86D;
+	max-width: 960px;
+	margin: 0 auto; 
+	border-radius: 7px;
+}
+
+header h1 {
+	color: #7e7e7e;
+	/* font: 40px/40px ; */
+	margin: 0;
+	padding: 0 10px 0 100px;
+	}
+	
+header h1 ~ h1 {
+	padding: 0 0 0 150px;
+}
+
+header h2 {
+	color: #7e7e7e;
+/* 	display: inline-block; */
+/* 	font: 40px/40px ; */
+	margin: 0;
+	padding: 5px 10px 0 200px;
+	
+}
+
+/*Горизонтальное меню*/
+.top-nav {
+	font-size: 110%;
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	
+	/* border-bottom: 5px solid #F5E86D; */
+}
+.top-nav a:link, .top-nav a:visited {
+	color: #7e7e7e;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	border-radius: 2px;
+}
+.top-nav a:hover, .top-nav a:active, .top-nav a:focus {	color: #fff;	background-color: #29E696;}
+
+/*Текущая страница*/
+#heading {
+	background: transparent url(../images/h1-bg.png);
+	margin: 5px 0;
+	padding-left: 0px;
+	text-align: center;
+}
+
+#heading h3 {
+	display: inline-block;
+	color: #7e7e7e;
+	font: 40px/40px ;
+	background: url(../images/bg.png);
+	margin: 0;
+	padding: 0 10px;
+}
+
+/*Вертикальное меню*/
+aside { 	float: left;	width: 250px;	color: #7e7e7e;}
+
+.aside-menu li {
+	font-weight: 200;
+	border-top: 1px solid #e7e7e7;
+	padding-left: 5px;
+	margin-bottom: 5px;
+	border-radius: 4px;
+}
+.aside-menu li:hover, .aside-menu li:active, .aside-menu li:focus {
+	color: #fff;
+	background-color: #29E696;
+}
+.aside-menu li:first-child {	border: none;}
+.aside-menu a {	color: #8f8f8f;}
+aside  h4 ~ h4  {
+	background: #29E696;
+	font-size: 110%;
+	color: #fff;
+	padding-top: 5px;
+	padding-right: 10px;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	text-align: left;
+	font-weight: normal;
+	padding-bottom: 5px;
+	border-radius: 4px;
+	padding-left: 10px;
+}
+aside  p  {
+	background: #f3f3f3;
+	border: 1px solid #e7e7e7;
+	padding-bottom: 5px;
+	font-size: small;
+	margin: 0;
+	padding-top: 5px;
+	padding-left: 5px;
+	border-radius: 2px;
+	
+}
+aside h4 {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+	color:#7e7e7e;
+}
+/* Статьи  */
+.content {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 10px;
+	max-width: 700px;
+	float: right;
+	color: #7e7e7e;
+	padding-top: 2px;
+}
+
+.content h5{
+	font: 120% ;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+.content h6{font: 100% ; margin:10px; padding:5px;}
+.content img {
+	display: block;
+	float:left;
+	padding:7px 10px;
+}
+
+.content section h5 {
+	padding-left: 10px;
+	margin-left: 10px;
+	font-size: 100%;
+	padding-top: 10px;
+}
+
+
+.content section p{
+	padding-right: 0px;
+	padding-left: 10px;
+	margin-left: 10px;
+	padding: 5px;
+}
+/* Статьи событий */
+.content_events {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 5px;
+	max-width: 700px;
+	float: right;
+	color: #7e7e7e;
+	padding-top: 2px;
+}
+.content_events h5{
+	font: 120% ;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.content_events h6{font: 100% ; margin:10px; padding:5px;}
+.content_events img {
+	display: block;
+	float:left;
+	padding:7px 10px;
+}
+.content_events section{
+	height: 185px;/* border: 2px solid #fff; 	outline: 2px solid #c9c9c9; */
+	padding-top: 5px;
+}
+/* .content_text { display: block;} */
+.content_text .p_left{
+	padding: 0;
+	float: left;
+}
+.content_text .a_right{
+	padding: 0;
+	float: right;
+}
+
+/*Подвал*/
+footer {
+	padding: 5px 0;
+	background-color: #F5E86D;
+	position: relative;
+	clear: both;
+	font-size: 90%;
+	color:#7e7e7e;
+	max-width: 960px;	
+	margin: auto;	
+	height: 100px;
+	border-radius: 7px;
+}
+footer p {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+footer h4 {
+	font: 120% ;
+	border-bottom: 1px solid #919191;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 5px;
+	padding-left: 20px;
+}
+footer a {	color: #b4aeae}
+
+/*Подвал последние новости*/
+#news_footer time  {
+	color: #8f8f8f;
+	padding-left: 10px;
+	margin-right: 0px;
+	padding-right: 15px;
+	margin-left: 5px;
+}
+
+#news_footer {
+	float: left;
+	width: 260px;
+	padding-left: 20px;
+	padding-right: 10px;
+	margin-left: 10px;
+}
+#news_footer p {
+	padding-right: 15px;
+	padding-top: 1px;
+}
+
+/*Подвал карта сайта*/
+#sitemap {
+	width: 260px;
+	float: left;
+	margin-left: 10px;
+	padding-right: 10px;
+	margin-right: 0px;
+	padding-left: 5px;
+}
+
+#sitemap div {
+	display: inline-block;
+	padding-left: 5px;
+	width: 120px;
+}
+#sitemap #siteleft {
+	float: left;
+}
+#sitemap #siteright {
+	float: right;
+}
+
+
+#sitemap div + div {
+	margin-left: 10px;
+}
+#sitemap a {
+	display: block;
+	text-decoration: none;
+	font-size: 85%;
+	margin-bottom: 5px;
+	color: #8f8f8f;
+}
+#sitemap a:hover {	text-decoration: underline;}
+
+/*Подвал социальные сети*/
+#social {
+	float: left;
+	margin-left: 10px;
+	width: 190px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.social-icon {
+	display: inline-block;
+	padding-left: 5px;
+	background-repeat: no-repeat;
+	padding-right: 5px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+#social #ccit  {
+	width: auto;
+	height: auto;
+	text-align: center;
+	display: inline-block;
+	padding-left: 5px;
+	bottom: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*Подвал логотип и подпись*/
+#footer-logo {
+	margin-top: 20px;
+	font-size: 10px;
+	text-align: left;
+	margin-left: 0px;
+	padding-left: 5px;
+	float: left;
+	margin-left: 10px;
+	width: 140px;
+}
+section .content_text {
+	padding: 0;
+}

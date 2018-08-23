@@ -1,7 +1,7 @@
-<h1>Первая страничка с публикацией</h1>
+<h1>First page with the publication</h1>
 
-Результат представлен здесь <http://okbur.ru>
+You can see the result here. <http://okbur.ru>
 ---
-Этот проект выполнен по заказу и мой первый шаг в создании сайта. В основном использовал html&css.
-Далее по мере изучения новых инструментов блог будет преобразовываться и наполняться.
+This project is made to order and my first step in creating a website. Mainly used html&css.
+As the new tools are studied, the blog will be transformed and filled.
 

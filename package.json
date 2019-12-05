@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/burik84/okbur/issues"
   },
-  "homepage": "https://github.com/burik84/okbur#readme"
+  "homepage": "https://github.com/burik84/okbur#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "IE 10"
+  ]
 }

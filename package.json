@@ -1,0 +1,19 @@
+{
+  "name": "okbur",
+  "version": "1.0.1",
+  "description": "Личный сайт О.В.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burik84/okbur.git"
+  },
+  "author": "burikAV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/burik84/okbur/issues"
+  },
+  "homepage": "https://github.com/burik84/okbur#readme"
+}

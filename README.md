@@ -1,7 +1,14 @@
-<h1>First page with the publication</h1>
+Обновление от 01.12.2019
+# okbur.ru
 
-You can see the result here. <http://okbur.ru>
+Результат можно посмотреть [здесь](http://okbur.ru)
 ---
-This project is made to order and my first step in creating a website. Mainly used html&css.
-As the new tools are studied, the blog will be transformed and filled.
+## Цель проекта
 
+Личный сайт О.В. используется для публикации последних новостей или статей связанных с педагогической деятельностью.
+
+## О проекте
+Проект проходит обновление, из веденных обновлений:
+* использование сборщика gulp
+* сетка bootstrap
+* flex

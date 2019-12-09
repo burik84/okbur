@@ -49,6 +49,7 @@ const rigger = require('gulp-rigger');
 const concat = require('gulp-concat');
 const gulpif = require('gulp-if');
 const tildeImporter = require('node-sass-tilde-importer');
+const imagemin = require('gulp-imagemin');
 
 sass.compiler = require('node-sass');
 
@@ -57,10 +58,19 @@ function clean() {
   return del(paths.clean)
 }
 
+function image() {
+  return gulp.src(paths.src.img)
+    .pipe(imagemin({
+      progressive: true,
+      optimizationLevel: 5
+    }))
+    .pipe(gulp.dest(paths.build.img));
+}
+
 function html() {
   return gulp.src(paths.src.html)
     .pipe(plumber()) // отслеживание ошибок
-    .pipe(rigger()) //Прогоним через rigger
+    .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
     .pipe(gulpif(isProd, htmlmin({
       collapseWhitespace: true
     }))) //Проверяем если у нас prod то удаляем все лишнее и минимизируем файлы
@@ -98,10 +108,11 @@ exports.clean = clean;
 exports.styles = styles;
 exports.html = html;
 exports.watch = watch;
+exports.image = image;
 
 // сборка
 gulp.task('build',
-  gulp.series(clean,
+  gulp.series(clean, image,
     gulp.parallel(
       html,
       styles

@@ -49,6 +49,7 @@ const rigger = require('gulp-rigger');
 const concat = require('gulp-concat');
 const gulpif = require('gulp-if');
 const tildeImporter = require('node-sass-tilde-importer');
+const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 
 sass.compiler = require('node-sass');
@@ -56,6 +57,10 @@ sass.compiler = require('node-sass');
 // удаление папки сборки dist
 function clean() {
   return del(paths.clean)
+}
+// удаление кэша
+function clear() {
+  return cache.clearAll()
 }
 
 function image() {
@@ -65,6 +70,11 @@ function image() {
       optimizationLevel: 5
     }))
     .pipe(gulp.dest(paths.build.img));
+}
+
+function files() {
+  return gulp.src(paths.src.fonts)
+    .pipe(gulp.dest(paths.build.fonts));
 }
 
 function html() {
@@ -105,14 +115,16 @@ function watch() {
   gulp.watch(paths.watch.style, styles);
 }
 exports.clean = clean;
+exports.clear = clear;
 exports.styles = styles;
 exports.html = html;
 exports.watch = watch;
 exports.image = image;
+exports.files = files;
 
 // сборка
 gulp.task('build',
-  gulp.series(clean, image,
+  gulp.series(clean, clear, image, files,
     gulp.parallel(
       html,
       styles

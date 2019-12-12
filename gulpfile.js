@@ -12,7 +12,7 @@ var paths = {
   src: {
     html: 'src/*.html',
     js: 'src/js/*.js',
-    style: 'src/scss/style.scss',
+    style: 'src/scss/*.scss',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*',
     service: 'src/service/**/*.*'
@@ -94,7 +94,7 @@ function styles() {
     .pipe(sass({
       importer: tildeImporter
     }).on('error', sass.logError)) // scss -> css + импорт из nodemodules c использованием ~
-    .pipe(concat('style.css'))
+    // .pipe(concat('style.css'))
     .pipe(autoprefixer({ // добавим префиксы
       overrideBrowserslist: ['last 2 versions'],
       cascade: false

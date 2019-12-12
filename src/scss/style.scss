@@ -1,6 +1,7 @@
 @import '~normalize.css/normalize';
 @import 'utils/font';
+@import 'utils/var';
 
 body {
-  font-family: 'Roboto Regular', sans-serif;
+  font-family: $font-stackAdd;
 }

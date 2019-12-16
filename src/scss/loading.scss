@@ -1,0 +1,10 @@
+@import 'utils/var'; // @import 'blocks/container';
+
+body {
+  font-family: $font-stack;
+}
+
+.header {
+  text-align: center;
+  color: $color-text;
+}

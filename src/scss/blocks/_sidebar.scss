@@ -1,0 +1,30 @@
+.sidebar {
+  background: linear-gradient(90deg, $bgc-sidebar1 0%, $bgc-sidebar2 100%);
+  padding-right: 20px;
+  padding-left: 20px;
+
+  &__title {
+    color: $color-text;
+    text-align: center;
+    margin-top: 160px;
+    font-family: $font-title;
+
+    &-first {
+      margin-left: -100px;
+      text-transform: uppercase;
+    }
+
+    &-second {
+      margin-left: 50px;
+    }
+  }
+
+  &__img {
+    text-align: center;
+    margin-top: 80px;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}

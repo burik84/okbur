@@ -1,0 +1,20 @@
+#grid {
+  display: grid;
+  grid-template-areas: "header main" "footer footer";
+  grid-template-rows: 1fr 80px;
+  grid-template-columns: 375px 4fr;
+  grid-gap: 1vw;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}

@@ -1,11 +1,14 @@
 .main {
   padding-top: 72px;
-  padding-left: 112px;
+  padding-left: 42px;
 
   &-title {
     color: $color-textDark;
     font-size: 36px;
     margin-bottom: 43px;
+    line-height: 42px;
+    font-style: normal;
+    font-weight: normal;
   }
 }
 
@@ -16,9 +19,12 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: $color-card;
-  width: 420px;
-  margin-right: 54px;
+  max-width: 880px;
+  width: 100%;
+  margin-right: 16px;
   margin-bottom: 67px;
 
   &:nth-child(even) {
@@ -29,7 +35,8 @@
     font-family: $font-title;
     font-size: 14px;
     color: $color-textTitle;
-    margin: 16px auto 4px;
+    margin-top: 16px;
+    margin-bottom: 4px;
 
     &__title {
       padding-left: 10px;
@@ -40,5 +47,55 @@
     color: $color-textDark;
     margin-bottom: 12px;
     padding-left: 10px;
+    text-align: center;
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    padding: 0 10px;
+
+    &-text {
+      align-self: center;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    // align-content: center;
+    // line-height: 1.4;
+    // vertical-align: middle;
+  }
+
+  &__img {
+    margin-right: 12px;
+  }
+
+  &-link--youtube {
+    position: relative;
+    padding-right: 32px;
+    text-decoration: none;
+    line-height: 1.2;
+    vertical-align: middle;
+
+    &::after {
+      content: url("../img/icons/youtube.png");
+      // background-image: url("../img/icons/youtube.png");
+      position: absolute;
+      right: 0;
+      top: -3px;
+      display: block;
+    }
+  }
+
+  &__carousel {
+    padding: 0 10px;
+    margin-bottom: 16px;
   }
 }

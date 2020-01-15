@@ -133,4 +133,4 @@ gulp.task('build',
 );
 
 // Сборка заданий в одно общее -задача по умолчанию
-gulp.task('default', gulp.series('build', watch));
+gulp.task('server', gulp.series('build', watch));

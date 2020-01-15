@@ -8,31 +8,36 @@
 </head>
 
 <body>
-  <header class="header">
+  <div class="header-hidden">
     <h1 class="h1">Оксана Черкашина. Блог.</h1>
-  </header>
+  </div>
 
   <div id="grid">
-    <aside class="sidebar">
+    <header class="header">
       <div class="container">
-        <h2 class="sidebar__title"><span class="sidebar__title-first">Оксана</span> <br><span class="sidebar__title-second">Черкашина</span></h2>
-        <div class="sidebar__img"><img src="./img/header-img.jpg" alt="Фото Оксана Черкашина"></div>
-        <!-- /.sidebar__img -->
+        <div class="header-content">
+          <h2 class="header__title"><span class="header__title-first">Оксана</span> <br><span class="header__title-second">Черкашина</span></h2>
+          <div class="header__img"><img src="./img/header-img.jpg" alt="Фото Оксана Черкашина"></div>
+          <!-- /.header__img -->
 
-        <p class="sidebar__descr">Я педагог дополнительного образования в доме творчества и организатор региональных соревнований по робототехнике <a class="link" href="http://xn--90acgda4cbjegs2i.xn--p1ai/">Роботы вперед!</a></p>
-        <div class="links">
-          <a class="link card-link" href="#">Больше обо мне...</a>
+          <p class="header__descr">Я педагог дополнительного образования в доме творчества и организатор региональных соревнований по робототехнике <a class="header__link link" href="http://xn--90acgda4cbjegs2i.xn--p1ai/">Роботы вперед!</a></p>
+
+          <div class="links">
+            <a class="link" href="#">Больше обо мне...</a>
+          </div>
         </div>
+        <!-- /.header__content -->
+
         <div class="icons">
-          <a href="" class="link"><img src="./img/icons/vk.png" alt="вконтакте"></a>
+          <a href="" class="link"><img src="./img/icons/vk.png" alt="логотип вконтакте"></a>
+          <a href="" class="link"><img src="./img/icons/slack.png" alt="логотип slack"></a>
         </div>
       </div>
       <!-- /.container -->
 
-    </aside>
+    </header>
     <main class="main" role="main">
       <h2 class="main-title">Что нового?</h2>
-
       <div class="cards">
         <article class="card">
           <header class="card-header">
@@ -49,7 +54,6 @@
                 Сланцев, Гатчины, Киришей, Соснового Бора, Волосово и Нарвы.</p>
             </div>
             <!-- /.card__descr -->
-
             <div class="card__carousel">
               <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
           </div>
@@ -63,83 +67,88 @@
           <!-- /.card__links links -->
         </article>
         <article class="card">
-          <div class="card-time">
-            <p class="card-time__title">03 ноября, 2019 Всеволожск</p>
-          </div><!-- /.card-time -->
-          <h3 class="card__title">Открытые соревнования по робототехнике Всеволожск</h3>
-          <div class="card__descr">
-            <div class="card__img">
-              <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
-            <!-- /.card__img -->
-            <p class="card__descr-text">3 ноября 2019 года прошли Открытые соревнования по робототехнике Всеволожского района. Наши обучающиеся приняли участие в категории "Интеллектуальное сумо". </p>
+          <header class="card-header">
+            <p class="card-header__title">03 ноября, 2019 Всеволожск</p>
+          </header>
+          <div class="card-body">
+            <h3 class="card-body__title">Открытые соревнования по робототехнике Всеволожск</h3>
+            <div class="card-body__descr">
+              <div class="card__img">
+                <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
+              <!-- /.card__img -->
+              <p class="card-body__text">3 ноября 2019 года прошли Открытые соревнования по робототехнике Всеволожского района. Наши обучающиеся приняли участие в категории "Интеллектуальное сумо". </p>
+            </div>
+            <!-- /.card__descr -->
+            <div class="card__carousel">
+              <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
           </div>
-          <!-- /.card__descr -->
-
-          <div class="card__links links">
-            <a href="https://youtu.be/Ufip2-paMz8" class="link card-link--youtube" target="_blank">
+          <!-- /.card-body -->
+          <footer class="card-footer">
+            <a href="https://youtu.be/Ufip2-paMz8" class="link card-footer__link--youtube" target="_blank">
               <!-- <img src="./img/icons/youtube.png" alt="логотип ютуб">  -->
               Смотреть на канале</a>
-            <a href="https://vk.com/wall-75889999_337" class="link card-link" target="_blank">Читать далее ...</a>
-          </div>
+            <a href="https://vk.com/wall-75889999_337" class="link card-footer__link" target="_blank">Читать далее ...</a>
+          </footer>
           <!-- /.card__links links -->
-          <div class="card__carousel">
-            <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
-          <!-- /.card__img -->
         </article>
 
-        <article class="card">
-          <div class="card-time">
-            <p class="card-time__title">23 октября, 2019 Первомайское, Выборгский район</p>
-          </div><!-- /.card-time -->
-          <h3 class="card__title">Областной сбор "Юный техник".</h3>
-          <div class="card__descr">
-            <div class="card__img">
-              <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
-            <!-- /.card__img -->
-            <p class="card__descr-text">23.10.2019 обучающиеся Дома творчества участвовали в областном сборе "Юный техник", который проходил в Первомайском центре образования в Выборгском районе. Для ребят провели экскурсии по самому центру и его
-              музею, а
-              также
-              провели 3 увлекательных мастер-класса</p>
-          </div>
-          <!-- /.card__descr -->
 
-          <div class="card__links links">
-            <a href="https://youtu.be/2ilExnq7F7Q" class="link card-link--youtube" target="_blank">
+        <article class="card">
+          <header class="card-header">
+            <p class="card-header__title">23 октября, 2019 Первомайское, Выборгский район</p>
+          </header>
+          <div class="card-body">
+            <h3 class="card-body__title">Областной сбор "Юный техник".</h3>
+            <div class="card-body__descr">
+              <div class="card__img">
+                <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
+              <!-- /.card__img -->
+              <p class="card-body__text">23.10.2019 обучающиеся Дома творчества участвовали в областном сборе "Юный техник", который проходил в Первомайском центре образования в Выборгском районе. Для ребят провели экскурсии по самому центру и его
+                музею, а
+                также
+                провели 3 увлекательных мастер-класса</p>
+            </div>
+            <!-- /.card__descr -->
+            <div class="card__carousel">
+              <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
+          </div>
+          <!-- /.card-body -->
+          <footer class="card-footer">
+            <a href="https://youtu.be/2ilExnq7F7Q" class="link card-footer__link--youtube" target="_blank">
               <!-- <img src="./img/icons/youtube.png" alt="логотип ютуб">  -->
               Смотреть на канале</a>
-            <a href="http://pervomayco.ru/about/news/2019/543/" class="link card-link" target="_blank">Читать далее ...</a>
-          </div>
+            <a href="http://pervomayco.ru/about/news/2019/543/" class="link card-footer__link" target="_blank">Читать далее ...</a>
+          </footer>
           <!-- /.card__links links -->
-          <div class="card__carousel">
-            <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
-          <!-- /.card__img -->
         </article>
 
-        <article class="card">
-          <div class="card-time">
-            <p class="card-time__title">19 мая, 2019 Сланцы</p>
-          </div><!-- /.card-time -->
-          <h3 class="card__title">III соревнования Роботы вперед</h3>
-          <div class="card__descr">
-            <div class="card__img">
-              <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
-            <!-- /.card__img -->
-            <p class="card__descr-text">19 мая 2019 года в Доме творчества на базе ул.Грибоедова д.8 прошли lll Соревнования «Роботы вперёд». В данном мероприятии приняли участие обучающиеся разных учреждений из г.Кингисепп, г.Ивангорода,
-              Санкт-Петербурга,
-              г.Сланцы и Волосовского района. </p>
-          </div>
-          <!-- /.card__descr -->
 
-          <div class="card__links links">
-            <a href="https://youtu.be/GBCS0qtjDgU" class="link card-link--youtube" target="_blank">
+        <article class="card">
+          <header class="card-header">
+            <p class="card-header__title">19 мая, 2019 Сланцы</p>
+          </header>
+          <div class="card-body">
+            <h3 class="card-body__title">III соревнования Роботы вперед</h3>
+            <div class="card-body__descr">
+              <div class="card__img">
+                <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
+              <!-- /.card__img -->
+              <p class="card-body__text">19 мая 2019 года в Доме творчества на базе ул.Грибоедова д.8 прошли lll Соревнования «Роботы вперёд». В данном мероприятии приняли участие обучающиеся разных учреждений из г.Кингисепп, г.Ивангорода,
+                Санкт-Петербурга,
+                г.Сланцы и Волосовского района.</p>
+            </div>
+            <!-- /.card__descr -->
+            <div class="card__carousel">
+              <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
+          </div>
+          <!-- /.card-body -->
+          <footer class="card-footer">
+            <a href="https://youtu.be/GBCS0qtjDgU" class="link card-footer__link--youtube" target="_blank">
               <!-- <img src="./img/icons/youtube.png" alt="логотип ютуб">  -->
               Смотреть на канале</a>
-            <a href="https://vk.com/wall-75889999_319" class="link card-link" target="_blank">Читать далее ...</a>
-          </div>
+            <a href="https://vk.com/wall-75889999_319" class="link card-footer__link" target="_blank">Читать далее ...</a>
+          </footer>
           <!-- /.card__links links -->
-          <div class="card__carousel">
-            <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
-          <!-- /.card__img -->
         </article>
       </div>
       <!-- /.cards -->

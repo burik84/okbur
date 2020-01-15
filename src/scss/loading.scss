@@ -1,10 +1,9 @@
-@import 'utils/var'; // @import 'blocks/container';
+@import 'utils/var';
 
 body {
   font-family: $font-stack;
 }
 
 .header {
-  text-align: center;
   color: $color-text;
 }

@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 16px;
+  height: 80px;
+  line-height: 80px;
+
+  &__copy {
+    // display: inline-block;
+    margin-right: 16px;
+    // vertical-align: middle;
+  }
+
+  &-icons {
+    // position: relative;
+    &__img {
+      margin: 0 4px;
+      transform: translateY(25%);
+    }
+  }
+}

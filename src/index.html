@@ -8,34 +8,11 @@
 </head>
 
 <body>
-  <div class="header-hidden">
-    <h1 class="h1">Оксана Черкашина. Блог.</h1>
-  </div>
+
+  //= template/hidden.html
 
   <div id="grid">
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <h2 class="header__title"><span class="header__title-first">Оксана</span> <br><span class="header__title-second">Черкашина</span></h2>
-          <div class="header__img"><img src="./img/header-img.jpg" alt="Фото Оксана Черкашина"></div>
-          <!-- /.header__img -->
-
-          <p class="header__descr">Я педагог дополнительного образования в доме творчества и организатор региональных соревнований по робототехнике <a class="header__link link" href="http://xn--90acgda4cbjegs2i.xn--p1ai/">Роботы вперед!</a></p>
-
-          <div class="links">
-            <a class="link" href="#">Больше обо мне...</a>
-          </div>
-        </div>
-        <!-- /.header__content -->
-
-        <div class="icons">
-          <a href="" class="link"><img src="./img/icons/vk.png" alt="логотип вконтакте"></a>
-          <a href="" class="link"><img src="./img/icons/slack.png" alt="логотип slack"></a>
-        </div>
-      </div>
-      <!-- /.container -->
-
-    </header>
+    //= template/header.html
     <main class="main" role="main">
       <h2 class="main-title">Что нового?</h2>
       <div class="cards">
@@ -47,6 +24,7 @@
             <h3 class="card-body__title">V Окружной форум по робототехнике Кингисепп</h3>
             <div class="card-body__descr">
               <div class="card__img">
+                <!-- <div class="card__img d-none d-sm-block d-md-none d-lg-block"> -->
                 <img src="https://via.placeholder.com/100x80" alt="Логотип соревнования"></div>
               <!-- /.card__img -->
               <p class="card-body__text">9 ноября в Центре информационных технологий г. Кингисепп состоялся V Окружной форум робототехники Юго-Западного образовательного округа «Старт в будущее». Участники форума — обучающиеся и педагоги Кингисеппа,
@@ -59,7 +37,7 @@
           </div>
           <!-- /.card-body -->
           <footer class="card-footer">
-            <a href="https://youtu.be/xANEOrfSNQA" class="link card-footer__link--youtube" target="_blank">
+            <a href="https://youtu.be/xANEOrfSNQA" class="link card-footer__link card-footer__link--youtube" target="_blank">
               <!-- <img src="./img/icons/youtube.png" alt="логотип ютуб">  -->
               Смотреть на канале</a>
             <a href="http://kingisepp.ru/news/block-5543/" class="link card-footer__link" target="_blank">Читать далее ...</a>
@@ -152,20 +130,14 @@
         </article>
       </div>
       <!-- /.cards -->
-
     </main>
-    <footer class="footer">
-      <div class="copy">
-        <span>&copy; 2017-2019 Оксана Черкашина</span>
-        <span>Сделано с <img src="./img/icons/heart-solid.png" alt="маленькое сердечко"> и <img src="./img/icons/coffee-solid.png" alt="с чашкой чай"> </span>
-      </div>
-      <!-- /.copy -->
-    </footer>
+    //= template/footer.html
+
   </div>
   <!-- /#grid -->
 
 
-  //= template/footer.html
+  //= template/footer-script.html
 </body>
 
 </html>

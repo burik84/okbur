@@ -11,7 +11,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 body {
@@ -44,3 +44,4 @@ body {
 @import 'blocks/header';
 @import 'blocks/main';
 @import 'blocks/footer';
+@import 'utils/mobile';

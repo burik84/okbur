@@ -1,6 +1,7 @@
 .main {
   padding-top: 2em;
   padding-left: 1em;
+  margin: 0 32px;
 
   &-title {
     color: $color-textDark;
@@ -16,7 +17,6 @@
   display: flex;
   flex-direction: column;
   margin-right: 16px;
-  // flex-wrap: wrap;
 }
 
 .card {
@@ -26,11 +26,10 @@
   max-width: 680px;
   width: 100%;
   padding: 0 16px;
-  margin-bottom: 67px;
+  margin-bottom: 64px;
 
   &-header {
-    font-family: $font-title;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: $color-textTitle;
     margin-top: 16px;
     margin-bottom: 16px;

@@ -1,0 +1,32 @@
+.error {
+  &__header {
+    text-align: center;
+    transform: translateX(-100px);
+    font-size: 9rem;
+    color: $color-text404;
+    margin: 124px auto 84px;
+  }
+
+  &__content {
+    text-align: center;
+    transform: translateX(100px);
+    margin-bottom: 42px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  &__link {
+    text-align: right;
+    margin-right: 10rem;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

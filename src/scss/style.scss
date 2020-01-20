@@ -30,11 +30,9 @@ body {
 }
 
 .link {
-  line-height: 1.2;
   text-decoration: none;
   color: $color-text-link;
   transition: 1s;
-  font-size: 1rem;
 
   &:hover {
     color: $darken-link-hover;
@@ -44,4 +42,5 @@ body {
 @import 'blocks/header';
 @import 'blocks/main';
 @import 'blocks/footer';
+@import 'pages/error';
 @import 'utils/mobile';

@@ -49,12 +49,21 @@
       display: flex;
       flex-direction: row;
       margin-bottom: 16px;
+
+      &--column {
+        flex-direction: column;
+      }
     }
 
     &__text {
       align-self: center;
       line-height: 1.4;
       font-size: 1rem;
+      margin-bottom: 18px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -84,6 +93,12 @@
   }
 
   &__carousel {
+    margin-bottom: 16px;
+  }
+}
+
+#about {
+  .card__img {
     margin-bottom: 16px;
   }
 }

@@ -4,13 +4,15 @@
 var paths = {
   build: {
     html: 'dist/',
+    htmlblog: 'dist/blog/',
     js: 'dist/js/',
     style: 'dist/css/',
     img: 'dist/img/',
     fonts: 'dist/fonts/'
   },
   src: {
-    html: 'src/*.html',
+    html: 'src/html/*.html',
+    htmlblog: 'src/html/blog/*.html',
     js: 'src/js/*.js',
     style: 'src/scss/*.scss',
     img: 'src/img/**/*.*',
@@ -72,7 +74,7 @@ function image() {
     .pipe(gulp.dest(paths.build.img));
 }
 
-function files() {
+function filesfonts() {
   return gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.build.fonts));
 }
@@ -85,6 +87,16 @@ function html() {
       collapseWhitespace: true
     }))) //Проверяем если у нас prod то удаляем все лишнее и минимизируем файлы
     .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
+    .pipe(browserSync.stream()); // перезагрузка сервера
+}
+
+
+//Сборка html файлов для блога - из папки в папку блог!!!
+function htmlblog() {
+  return gulp.src(paths.src.htmlblog)
+    .pipe(plumber()) // отслеживание ошибок
+    .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
+    .pipe(gulp.dest(paths.build.htmlblog)) // выкладывание готовых файлов
     .pipe(browserSync.stream()); // перезагрузка сервера
 }
 // Если у нас на входе несколько файлов scss, то plumber и concat я не использую.
@@ -112,21 +124,28 @@ function watch() {
     server: paths.baseDir
   });
   gulp.watch(paths.watch.html, html);
+  gulp.watch(paths.watch.html, htmlblog);
   gulp.watch(paths.watch.style, styles);
 }
 exports.clean = clean;
 exports.clear = clear;
 exports.styles = styles;
 exports.html = html;
+exports.htmlblog = htmlblog;
 exports.watch = watch;
 exports.image = image;
-exports.files = files;
+exports.filesfonts = filesfonts;
 
 // сборка
 gulp.task('build',
-  gulp.series(clean, clear, image, files,
+  gulp.series(clean,
+    clear,
+    image,
+    filesfonts,
+    htmlblog,
     gulp.parallel(
       html,
+      htmlblog,
       styles
     )
   )

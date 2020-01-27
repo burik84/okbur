@@ -102,3 +102,21 @@
     margin-bottom: 16px;
   }
 }
+
+.archiv {
+  text-align: right;
+  margin-bottom: 16px;
+
+  &__link {
+    padding: 10px 20px;
+    margin-right: 32px;
+    display: inline-block;
+    background-color: lighten($color-text404, 10%);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      background-color: lighten($color-text404, 5%);
+    }
+  }
+}

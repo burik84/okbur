@@ -1,4 +1,5 @@
 @import '~normalize.css/normalize';
+@import '~bootstrap/scss/bootstrap-grid';
 @import 'utils/font';
 @import 'utils/var';
 
@@ -37,8 +38,11 @@ body {
   &:hover {
     color: $darken-link-hover;
   }
+
+  &-none {
+    display: none;
+  }
 }
-@import 'utils/grid';
 @import 'blocks/header';
 @import 'blocks/main';
 @import 'blocks/footer';

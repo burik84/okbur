@@ -8,7 +8,7 @@ var paths = {
     js: 'dist/js/',
     style: 'dist/css/',
     img: 'dist/img/',
-    fonts: 'dist/fonts/'
+    fonts: 'dist/fonts/',
   },
   src: {
     html: 'src/html/*.html',
@@ -17,7 +17,7 @@ var paths = {
     style: 'src/scss/*.scss',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*',
-    service: 'src/service/**/*.*'
+    static: 'src/static/**/*.*'
   },
   watch: {
     html: 'src/**/*.html',
@@ -74,9 +74,14 @@ function image() {
     .pipe(gulp.dest(paths.build.img));
 }
 
-function filesfonts() {
+function filefonts() {
   return gulp.src(paths.src.fonts)
     .pipe(gulp.dest(paths.build.fonts));
+}
+
+function filestatic() {
+  return gulp.src(paths.src.static)
+    .pipe(gulp.dest(paths.baseDir));
 }
 
 function html() {
@@ -134,22 +139,36 @@ exports.html = html;
 exports.htmlblog = htmlblog;
 exports.watch = watch;
 exports.image = image;
-exports.filesfonts = filesfonts;
+exports.filefonts = filefonts;
+exports.filestatic = filestatic;
 
 // сборка
 gulp.task('build',
   gulp.series(clean,
     clear,
     image,
-    filesfonts,
+    filefonts,
     htmlblog,
     gulp.parallel(
       html,
-      htmlblog,
       styles
     )
   )
 );
 
+// сборка
+gulp.task('prod',
+  gulp.series(clean,
+    clear,
+    image,
+    filefonts,
+    filestatic,
+    htmlblog,
+    gulp.parallel(
+      html,
+      styles
+    )
+  )
+);
 // Сборка заданий в одно общее -задача по умолчанию
 gulp.task('server', gulp.series('build', watch));

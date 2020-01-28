@@ -3,42 +3,27 @@
 		<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
 	<loc>http://okbur.ru/</loc>
-	<lastmod>2019-01-10T15:00:45+01:00</lastmod>
+	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://okbur.ru/index.html</loc>
-	<lastmod>2019-01-10T15:00:45+01:00</lastmod>
+	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/aboutme.html</loc>
-	<lastmod>2019-01-10T15:00:46+01:00</lastmod>
+	<loc>http://okbur.ru/about.html</loc>
+	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/events.html</loc>
-	<lastmod>2019-01-10T15:00:46+01:00</lastmod>
+	<loc>http://okbur.ru/archiv.html</loc>
+	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/inthework.html</loc>
-	<lastmod>2019-01-10T15:00:47+01:00</lastmod>
+	<loc>http://okbur.ru/blog/robotron2018-blog.html</loc>
+	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
-</url>
-<url>
-	<loc>http://okbur.ru/sitebuilding.html</loc>
-	<lastmod>2019-01-10T15:00:48+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>http://okbur.ru/eventsarchive.html</loc>
-	<lastmod>2019-01-10T15:00:48+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>http://okbur.ru/blog/robotron-pushkin2018.html</loc>
-	<lastmod>2019-01-10T15:00:48+01:00</lastmod>
-	<priority>0.8</priority>
 </url>
 </urlset>

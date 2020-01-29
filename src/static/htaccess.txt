@@ -1,0 +1,102 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# кодировка UTF-8 для файлов
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+	# Редирект домена с WWW на домен без WWW
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$
+	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+	# Перенаправляем с HTTP на HTTPS
+	SetEnvIf X-HTTPS 1 HTTPS
+	RewriteBase /
+	RewriteCond %{HTTP:X-HTTPS} !1
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	# Добавлять слэш на конец URL
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !\..{1,10}$
+	RewriteCond %{REQUEST_URI} !(.*)/$
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
+	# Убираем index.php на конце
+	RewriteCond %{REQUEST_URI} ^(.*)/index\.php$
+	RewriteRule ^(.*)index\.php$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	# Убираем index.html на конце
+	RewriteCond %{REQUEST_URI} ^(.*)/index\.html$
+	RewriteRule ^(.*)index\.html$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+	# Страницы пользовательских ошибок
+</IfModule>
+
+# Защита сайта от спам ссылок
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+php_value default_charset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml
+
+# Задаём настройки кэша
+AddHandler application/x-httpd-php .html
+AddHandler cgi-script .pl .py .jsp .asp .htm .shtml .sh .cgi
+AddType application/x-javascript .js
+AddType text/css .css
+AddType text/xml .xml
+AddType application/octet-stream .doc .mov .avi .pdf .xls
+
+# ForceType application/x-httpd-php
+<ifModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+
+<ifModule mod_headers.c>
+
+	#кэшировать html и htm файлы на один день
+	<FilesMatch "\.(html|htm)$">
+		Header set Cache-Control "max-age=43200"
+	</FilesMatch>
+
+	#кэшировать css, javascript и текстовые файлы на одну неделю
+	<FilesMatch "\.(js|css|txt)$">
+		Header set Cache-Control "max-age=604800"
+	</FilesMatch>
+
+	#кэшировать флэш и изображения на месяц
+	<FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png)$">
+		Header set Cache-Control "max-age=2592000"
+	</FilesMatch>
+
+	#отключить кэширование
+	<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+		Header unset Cache-Control
+	</FilesMatch>
+</IfModule>
+
+<ifModule mod_expires.c>
+	ExpiresActive On
+	#по умолчанию кеш в 5 секунд
+	ExpiresDefault "access plus 5 seconds"
+
+	#кэшировать флэш и изображения на месяц
+	ExpiresByType image/x-icon "access plus 2592000 seconds"
+	ExpiresByType image/jpeg "access plus 2592000 seconds"
+	ExpiresByType image/png "access plus 2592000 seconds"
+	ExpiresByType image/gif "access plus 2592000 seconds"
+	ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+
+	#кэшировать css, javascript и текстовые файлы на одну неделю
+	ExpiresByType text/css "access plus 604800 seconds"
+	ExpiresByType text/javascript "access plus 604800 seconds"
+	ExpiresByType application/javascript "access plus 604800 seconds"
+	ExpiresByType application/x-javascript "access plus 604800 seconds"
+
+	#кэшировать html и htm файлы на один день
+	ExpiresByType text/html "access plus 43200 seconds"
+
+	#кэшировать xml файлы на десять минут
+	ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>

@@ -2,14 +2,16 @@
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 
 <head>
-  //= ../template/head-index.html
-  //= ../template/link-blog-index.html
+  //= ../template/head-meta.html
+  //= ../template/blog/head-link.html
+  //= ../template/blog/head-static.html
   //= ../template/head-yandex.html
-  //= ../template/head-static.html
   <title>Оксана Черкашина. Мы на Роботроне 2018.</title>
 </head>
 
 <body id="blog">
+
+  //= ../template/hidden.html
   <div id="grid">
     //= ../template/header-blog.html
 
@@ -31,8 +33,11 @@
               демонстрировал его работу и отвечал на вопросы. В данной категории были представлены другие достойные проекты, но Александру удалось занять первое место.
             </p>
             <p class="card-body__text">Ребятам за призовые места вручали ценные подарки, медали и кубки! </p>
-            <div class="card__carousel">
-              <img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
+            <div class="carousel">
+              <div class="carousel__img"><img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
+              <div class="carousel__img"><img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
+              <div class="carousel__img"><img src="https://via.placeholder.com/320x180" alt="Картинки с соревнований"></div>
+            </div>
             <p class="card-body__text">Если интересно посмотреть, что происходило на соревнованиях смотрите видео на нашем канале</p>
           </div>
           <!-- /.card-body__descr -->
@@ -52,7 +57,7 @@
 
 
 
-  //= ../template/footer-blog-script.html
+  //= ../template/blog/footer-script.html
 </body>
 
 </html>

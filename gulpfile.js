@@ -123,6 +123,25 @@ function styles() {
     .pipe(browserSync.stream()); // перезагрузим сервер
 }
 
+function scriptApp() {
+  return gulp.src([ // Берем все необходимые библиотеки
+      'node_modules/jquery/dist/jquery.js', // Берем jQuery
+      'node_modules/slick-carousel/slick/slick.js' // Берем Magnific Popup
+    ])
+    .pipe(concat('app.min.js')) // Собираем их в кучу в новом файле libs.min.js
+    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку app/js
+}
+
+function scriptAppMin() {
+  return gulp.src([ // Берем все необходимые библиотеки
+      'node_modules/jquery/dist/jquery.min.js', // Берем jQuery
+      'node_modules/slick-carousel/slick/slick.min.js' // Берем Magnific Popup
+    ])
+    .pipe(concat('app.min.js')) // Собираем их в кучу в новом файле libs.min.js
+    .pipe(uglify()) // Сжимаем JS файл
+    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку app/js
+}
+
 // Инкрементальная сборка - пересборка если изменился файлы
 function watch() {
   browserSync.init({
@@ -141,6 +160,8 @@ exports.watch = watch;
 exports.image = image;
 exports.filefonts = filefonts;
 exports.filestatic = filestatic;
+exports.scriptApp = scriptApp;
+exports.scriptAppMin = scriptAppMin;
 
 // сборка
 gulp.task('build',
@@ -148,10 +169,12 @@ gulp.task('build',
     clear,
     image,
     filefonts,
+    filestatic,
     htmlblog,
     gulp.parallel(
       html,
-      styles
+      styles,
+      scriptApp
     )
   )
 );
@@ -166,7 +189,8 @@ gulp.task('prod',
     htmlblog,
     gulp.parallel(
       html,
-      styles
+      styles,
+      scriptAppMin
     )
   )
 );

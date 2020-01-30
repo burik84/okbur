@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img
+Host: https://okbur.ru/
+Sitemap: https://okbur.ru/sitemap.xml

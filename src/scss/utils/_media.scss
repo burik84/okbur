@@ -64,6 +64,10 @@
       margin-right: 0;
     }
   }
+
+  .slick-carousel {
+    display: none;
+  }
 }
 @media screen and (max-width: 425px) {
   .card {

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /cgi-bin/*
+Disallow: /errors/*
 Disallow: /img
 Host: https://okbur.ru/
 Sitemap: https://okbur.ru/sitemap.xml

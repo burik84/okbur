@@ -1,0 +1,19 @@
+.slick-carousel {
+  margin: 0 auto;
+  width: 230px;
+  position: relative;
+}
+
+.slick-slide {
+  width: 400px;
+}
+
+.slick-next,
+.slick-prev {
+  cursor: pointer;
+}
+
+.slick-next::before,
+.slick-prev::before {
+  color: $color-text;
+}

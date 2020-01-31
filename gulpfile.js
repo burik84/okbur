@@ -9,6 +9,7 @@ var paths = {
     style: 'dist/css/',
     img: 'dist/img/',
     fonts: 'dist/fonts/',
+    slickfonts: 'dist/css/fonts/',
   },
   src: {
     html: 'src/html/*.html',
@@ -16,15 +17,14 @@ var paths = {
     js: 'src/js/*.js',
     style: 'src/scss/*.scss',
     img: 'src/img/**/*.*',
-    fonts: 'src/fonts/**/*.*',
+    fonts: 'src/fonts/*.*',
+    slickfonts: 'src/fonts/slick/*.*',
     static: 'src/static/**/*.*'
   },
   watch: {
     html: 'src/**/*.html',
     js: 'src/js/**/*.js',
-    style: 'src/scss/**/*.scss',
-    img: 'src/img/**/*.*',
-    fonts: 'srs/fonts/**/*.*'
+    style: 'src/scss/**/*.scss'
   },
   clean: 'dist',
   baseDir: 'dist'
@@ -79,6 +79,11 @@ function filefonts() {
     .pipe(gulp.dest(paths.build.fonts));
 }
 
+function fileslick() {
+  return gulp.src(paths.src.slickfonts)
+    .pipe(gulp.dest(paths.build.slickfonts));
+}
+
 function filestatic() {
   return gulp.src(paths.src.static)
     .pipe(gulp.dest(paths.baseDir));
@@ -123,13 +128,30 @@ function styles() {
     .pipe(browserSync.stream()); // перезагрузим сервер
 }
 
+function script() {
+  return gulp.src(paths.src.js, {
+      sourcemaps: true
+    })
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку
+}
+
+function scriptMin() {
+  return gulp.src(paths.src.js, {
+      sourcemaps: true
+    })
+    .pipe(uglify())
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку
+}
+
 function scriptApp() {
   return gulp.src([ // Берем все необходимые библиотеки
       'node_modules/jquery/dist/jquery.js', // Берем jQuery
       'node_modules/slick-carousel/slick/slick.js' // Берем Magnific Popup
     ])
     .pipe(concat('app.min.js')) // Собираем их в кучу в новом файле libs.min.js
-    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку app/js
+    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку
 }
 
 function scriptAppMin() {
@@ -139,7 +161,7 @@ function scriptAppMin() {
     ])
     .pipe(concat('app.min.js')) // Собираем их в кучу в новом файле libs.min.js
     .pipe(uglify()) // Сжимаем JS файл
-    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку app/js
+    .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку
 }
 
 // Инкрементальная сборка - пересборка если изменился файлы
@@ -150,6 +172,7 @@ function watch() {
   gulp.watch(paths.watch.html, html);
   gulp.watch(paths.watch.html, htmlblog);
   gulp.watch(paths.watch.style, styles);
+  gulp.watch(paths.watch.js, script);
 }
 exports.clean = clean;
 exports.clear = clear;
@@ -160,8 +183,11 @@ exports.watch = watch;
 exports.image = image;
 exports.filefonts = filefonts;
 exports.filestatic = filestatic;
+exports.fileslick = fileslick;
 exports.scriptApp = scriptApp;
 exports.scriptAppMin = scriptAppMin;
+exports.script = script;
+exports.scriptMin = scriptMin;
 
 // сборка
 gulp.task('build',
@@ -170,11 +196,13 @@ gulp.task('build',
     image,
     filefonts,
     filestatic,
+    fileslick,
     htmlblog,
+    scriptApp,
     gulp.parallel(
       html,
       styles,
-      scriptApp
+      script
     )
   )
 );
@@ -186,11 +214,13 @@ gulp.task('prod',
     image,
     filefonts,
     filestatic,
+    fileslick,
     htmlblog,
+    scriptAppMin,
     gulp.parallel(
       html,
       styles,
-      scriptAppMin
+      scriptMin
     )
   )
 );

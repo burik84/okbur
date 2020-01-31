@@ -74,6 +74,10 @@
     justify-content: space-between;
     align-items: center;
 
+    &__link {
+      display: inline-block;
+    }
+
     &__link--youtube {
       position: relative;
       padding-right: 32px;

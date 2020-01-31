@@ -49,6 +49,7 @@ const cleanCSS = require('gulp-clean-css');
 const htmlmin = require('gulp-htmlmin');
 const rigger = require('gulp-rigger');
 const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 const gulpif = require('gulp-if');
 const tildeImporter = require('node-sass-tilde-importer');
 const cache = require('gulp-cache');
@@ -93,19 +94,37 @@ function html() {
   return gulp.src(paths.src.html)
     .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
-    .pipe(gulpif(isProd, htmlmin({
-      collapseWhitespace: true
-    }))) //Проверяем если у нас prod то удаляем все лишнее и минимизируем файлы
     .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
     .pipe(browserSync.stream()); // перезагрузка сервера
 }
 
+function htmlMin() {
+  return gulp.src(paths.src.html)
+    .pipe(plumber()) // отслеживание ошибок
+    .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    })) //удаляем все лишнее и минимизируем файлы
+    .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
+    .pipe(browserSync.stream()); // перезагрузка сервера
+}
 
 //Сборка html файлов для блога - из папки в папку блог!!!
 function htmlblog() {
   return gulp.src(paths.src.htmlblog)
     .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
+    .pipe(gulp.dest(paths.build.htmlblog)) // выкладывание готовых файлов
+    .pipe(browserSync.stream()); // перезагрузка сервера
+}
+
+function htmlblogMin() {
+  return gulp.src(paths.src.htmlblog)
+    .pipe(plumber()) // отслеживание ошибок
+    .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    })) //удаляем все лишнее и минимизируем файлы
     .pipe(gulp.dest(paths.build.htmlblog)) // выкладывание готовых файлов
     .pipe(browserSync.stream()); // перезагрузка сервера
 }
@@ -121,13 +140,29 @@ function styles() {
       overrideBrowserslist: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulpif(isProd, cleanCSS({
-      level: 1
-    }))) //Проверяем если у нас prod то удаляем все лишнее и минимизируем файлы
     .pipe(gulp.dest(paths.build.style)) // выгружаем в build
     .pipe(browserSync.stream()); // перезагрузим сервер
 }
 
+function stylesMin() {
+  return gulp.src(paths.src.style) // получим main.scss
+    .pipe(plumber())
+    .pipe(sass({
+      importer: tildeImporter
+    }).on('error', sass.logError)) // scss -> css + импорт из nodemodules c использованием ~
+    // .pipe(concat('style.css'))
+    .pipe(autoprefixer({ // добавим префиксы
+      overrideBrowserslist: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(cleanCSS({
+      level: 1
+    })) //Проверяем если у нас prod то удаляем все лишнее и минимизируем файлы
+    .pipe(gulp.dest(paths.build.style)) // выгружаем в build
+    .pipe(browserSync.stream()); // перезагрузим сервер
+}
+
+// Работа с файлами JS
 function script() {
   return gulp.src(paths.src.js, {
       sourcemaps: true
@@ -145,6 +180,7 @@ function scriptMin() {
     .pipe(gulp.dest(paths.build.js)); // Выгружаем в папку
 }
 
+// Работа с установленными библиотеками JS
 function scriptApp() {
   return gulp.src([ // Берем все необходимые библиотеки
       'node_modules/jquery/dist/jquery.js', // Берем jQuery
@@ -179,14 +215,19 @@ exports.clear = clear;
 exports.styles = styles;
 exports.html = html;
 exports.htmlblog = htmlblog;
+exports.script = script;
+exports.scriptApp = scriptApp;
 exports.watch = watch;
 exports.image = image;
 exports.filefonts = filefonts;
 exports.filestatic = filestatic;
 exports.fileslick = fileslick;
-exports.scriptApp = scriptApp;
+
+
+exports.stylesMin = stylesMin;
+exports.htmlMin = htmlMin;
+exports.htmlblogMin = htmlblogMin;
 exports.scriptAppMin = scriptAppMin;
-exports.script = script;
 exports.scriptMin = scriptMin;
 
 // сборка
@@ -215,11 +256,11 @@ gulp.task('prod',
     filefonts,
     filestatic,
     fileslick,
-    htmlblog,
+    htmlblogMin,
     scriptAppMin,
     gulp.parallel(
-      html,
-      styles,
+      htmlMin,
+      stylesMin,
       scriptMin
     )
   )

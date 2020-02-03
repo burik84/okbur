@@ -230,7 +230,7 @@ exports.htmlblogMin = htmlblogMin;
 exports.scriptAppMin = scriptAppMin;
 exports.scriptMin = scriptMin;
 
-// сборка
+// сборка для тестирования
 gulp.task('build',
   gulp.series(clean,
     clear,
@@ -248,7 +248,7 @@ gulp.task('build',
   )
 );
 
-// сборка
+// сборка для публикации - с минификацией файлов
 gulp.task('prod',
   gulp.series(clean,
     clear,
@@ -265,5 +265,5 @@ gulp.task('prod',
     )
   )
 );
-// Сборка заданий в одно общее -задача по умолчанию
+// Сборка заданий в одно общее - server для тестирование верстки
 gulp.task('server', gulp.series('build', watch));

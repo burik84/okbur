@@ -2,7 +2,7 @@
 # okbur.ru
 
 Результат можно посмотреть [здесь](https://okbur.ru)
-А здесь расположена будет старая версия сайта [okbur.ru](https://okbur.ru/ver1.1/index.html)
+А здесь расположена будет старая версия сайта [okbur.ru](https://okbur.ru/ver.1/index.html)
 ---
 ## Цель проекта
 

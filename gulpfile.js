@@ -22,7 +22,7 @@ var paths = {
     static: 'src/static/**/*.*'
   },
   watch: {
-    html: 'src/**/*.html',
+    html: 'src/html/**/*.html',
     js: 'src/js/**/*.js',
     style: 'src/scss/**/*.scss'
   },
@@ -68,10 +68,7 @@ function clear() {
 
 function image() {
   return gulp.src(paths.src.img)
-    .pipe(imagemin({
-      progressive: true,
-      optimizationLevel: 5
-    }))
+    .pipe(imagemin())
     .pipe(gulp.dest(paths.build.img));
 }
 

@@ -57,3 +57,10 @@
 * по [scss](https://sass-scss.ru/guide/)
 * Да, использую библиотеки [jQuery](https://jquery.com/) и [bootstrap-grid](https://getbootstrap.com/docs/4.4/layout/grid/)
 * В помощь по поиску необходимых инструментов [npm](https://www.npmjs.com/)
+* обработаки и сжатие изображение [TinyPNG](https://tinypng.com/)
+
+### Подготовка картинок
+* index.html фото для карточек размеры 320*180
+* index.html иконки соревнований для карточек размеры 100*80
+* blog фото для статьи размеры 230px
+* meta карточки размеры 968*504

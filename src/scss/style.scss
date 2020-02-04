@@ -1,46 +1,6 @@
 @import 'utils/font';
 @import 'utils/var';
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: $font-stackAdd;
-  background-color: $color-background;
-  color: $color-text;
-  font-weight: normal;
-}
-
-.header-hidden {
-  visibility: hidden;
-  position: absolute;
-  top: -100px;
-  text-align: center;
-  background-color: $color-background;
-}
-
-.link {
-  text-decoration: none;
-  color: $color-text-link;
-  transition: 1s;
-
-  &:hover {
-    color: $darken-link-hover;
-  }
-
-  &-none {
-    display: none;
-  }
-}
+@import 'utils/common';
 @import 'blocks/header';
 @import 'blocks/main';
 @import 'blocks/footer';

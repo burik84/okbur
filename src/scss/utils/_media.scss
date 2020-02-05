@@ -32,8 +32,8 @@
     }
 
     &__title {
-      font-size: 1.8rem;
       margin-bottom: 0;
+      font-size: 1.8rem;
 
       &-first,
       &-second {
@@ -42,6 +42,8 @@
     }
 
     &__img {
+      width: 100px;
+      height: 100px;
       margin-right: 16px;
       order: -1;
       width: 100px;
@@ -73,9 +75,9 @@
   }
 
   .archiv {
-    text-align: center;
-    padding: 8px 16px;
     margin-bottom: 8px;
+    padding: 8px 16px;
+    text-align: center;
 
     &__link {
       margin-right: 0;
@@ -114,9 +116,9 @@
   }
 
   .footer-content {
-    text-align: center;
     flex-direction: column;
     line-height: 2;
+    text-align: center;
   }
 
   .error__header {

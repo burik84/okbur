@@ -12,15 +12,15 @@ html {
 
 body {
   font-family: $font-stackAdd;
+  font-weight: normal;
   background-color: $color-background;
   color: $color-text;
-  font-weight: normal;
 }
 
 .header-hidden {
-  visibility: hidden;
   position: absolute;
   top: -100px;
+  visibility: hidden;
   text-align: center;
   background-color: $color-background;
 }

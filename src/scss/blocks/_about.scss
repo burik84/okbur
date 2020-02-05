@@ -1,27 +1,27 @@
 .about {
   display: flex;
   flex-direction: column;
-  background-color: $color-card;
   max-width: 680px;
   width: 100%;
   padding: 0 16px;
   margin-bottom: 48px;
+  background-color: $color-card;
 
   &-header {
-    font-size: 0.9rem;
-    color: $color-textTitle;
     margin-top: 16px;
     margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: $color-textTitle;
   }
 
   &-body {
     margin-bottom: 16px;
 
     &__title {
-      color: $color-textDark;
       margin-bottom: 12px;
       text-align: center;
       font-weight: normal;
+      color: $color-textDark;
     }
 
     &__descr {
@@ -35,10 +35,9 @@
     }
 
     &__text {
-      align-self: center;
+      margin-bottom: 18px;
       line-height: 1.4;
       font-size: 1rem;
-      margin-bottom: 18px;
 
       &:last-child {
         margin-bottom: 0;

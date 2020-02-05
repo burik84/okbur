@@ -1,15 +1,15 @@
 .main {
+  margin: 0 32px;
   padding-top: 2em;
   padding-left: 1em;
-  margin: 0 32px;
 
   &-title {
-    color: $color-textDark;
-    font-size: 2.2rem;
     margin-bottom: 1em;
-    line-height: 42px;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: normal;
+    line-height: 42px;
+    color: $color-textDark;
   }
 }
 
@@ -22,27 +22,27 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: $color-card;
   max-width: 680px;
   width: 100%;
-  padding: 0 16px;
   margin-bottom: 64px;
+  padding: 0 16px;
+  background-color: $color-card;
 
   &-header {
-    font-size: 0.9rem;
-    color: $color-textTitle;
     margin-top: 16px;
     margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: $color-textTitle;
   }
 
   &-body {
     margin-bottom: 16px;
 
     &__title {
-      color: $color-textDark;
       margin-bottom: 12px;
-      text-align: center;
       font-weight: normal;
+      text-align: center;
+      color: $color-textDark;
     }
 
     &__descr {
@@ -57,9 +57,9 @@
 
     &__text {
       align-self: center;
-      line-height: 1.4;
-      font-size: 1rem;
       margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.4;
 
       &:last-child {
         margin-bottom: 0;
@@ -108,13 +108,13 @@
 }
 
 .archiv {
-  text-align: right;
   margin-bottom: 16px;
+  text-align: right;
 
   &__link {
-    padding: 10px 20px;
-    margin-right: 32px;
     display: inline-block;
+    margin-right: 32px;
+    padding: 10px 20px;
     background-color: lighten($color-text404, 10%);
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);

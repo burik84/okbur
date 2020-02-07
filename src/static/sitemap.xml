@@ -2,27 +2,27 @@
 		<!--	created with www.mysitemapgenerator.com	-->
 		<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-	<loc>http://okbur.ru/</loc>
+	<loc>https://okbur.ru/</loc>
 	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/index.html</loc>
+	<loc>https://okbur.ru/index.html</loc>
 	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/about.html</loc>
+	<loc>https://okbur.ru/about.html</loc>
 	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/archiv.html</loc>
+	<loc>https://okbur.ru/archiv.html</loc>
 	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>http://okbur.ru/blog/robotron2018-blog.html</loc>
+	<loc>https://okbur.ru/blog/robotron2018-blog.html</loc>
 	<lastmod>2020-01-28T15:00:45+01:00</lastmod>
 	<priority>1.0</priority>
 </url>

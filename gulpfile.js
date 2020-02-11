@@ -29,15 +29,16 @@ var paths = {
     style: 'src/scss/**/*.scss'
   },
   clean: 'dist',
+  deleteFolder: 'dist/slick',
   baseDir: 'dist'
 };
 
 // для выбора режимов необходимо
 // режим отладки development разкомментировать
-let isDev = true;
+// let isDev = true;
 // режим production разкомментировать
 // let isDev = false;
-let isProd = !isDev;
+// let isProd = !isDev;
 
 
 const gulp = require('gulp');
@@ -62,6 +63,10 @@ sass.compiler = require('node-sass');
 // удаление папки сборки dist
 function clean() {
   return del(paths.clean)
+}
+// удаление папки slick в dist
+function delFolder() {
+  return del(paths.deleteFolder)
 }
 // удаление кэша
 function clear() {
@@ -215,6 +220,7 @@ function watch() {
   gulp.watch(paths.watch.js, script);
 }
 exports.clean = clean;
+exports.delFolder = delFolder;
 exports.clear = clear;
 exports.styles = styles;
 exports.html = html;
@@ -250,7 +256,8 @@ gulp.task('build',
       html,
       styles,
       script
-    )
+    ),
+    delFolder
   )
 );
 
@@ -269,7 +276,8 @@ gulp.task('prod',
       htmlMin,
       stylesMin,
       scriptMin
-    )
+    ),
+    delFolder
   )
 );
 // Сборка заданий в одно общее - server для тестирование верстки

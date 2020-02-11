@@ -10,6 +10,7 @@ var paths = {
     img: 'dist/img/',
     fonts: 'dist/fonts/',
     slickfonts: 'dist/css/fonts/',
+    slickgif: 'dist/css/',
   },
   src: {
     html: 'src/html/*.html',
@@ -18,7 +19,8 @@ var paths = {
     style: 'src/scss/*.scss',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/*.*',
-    slickfonts: 'src/fonts/slick/*.*',
+    slickfonts: 'src/static/slick/fonts/*.*',
+    slickgif: 'src/static/slick/gif/*.*',
     static: 'src/static/**/*.*'
   },
   watch: {
@@ -77,9 +79,14 @@ function filefonts() {
     .pipe(gulp.dest(paths.build.fonts));
 }
 
-function fileslick() {
+function fileslickfonts() {
   return gulp.src(paths.src.slickfonts)
     .pipe(gulp.dest(paths.build.slickfonts));
+}
+
+function fileslickgif() {
+  return gulp.src(paths.src.slickgif)
+    .pipe(gulp.dest(paths.build.slickgif));
 }
 
 function filestatic() {
@@ -218,7 +225,8 @@ exports.watch = watch;
 exports.image = image;
 exports.filefonts = filefonts;
 exports.filestatic = filestatic;
-exports.fileslick = fileslick;
+exports.fileslickfonts = fileslickfonts;
+exports.fileslickgif = fileslickgif;
 
 
 exports.stylesMin = stylesMin;
@@ -234,7 +242,8 @@ gulp.task('build',
     image,
     filefonts,
     filestatic,
-    fileslick,
+    fileslickfonts,
+    fileslickgif,
     htmlblog,
     scriptApp,
     gulp.parallel(
@@ -252,7 +261,8 @@ gulp.task('prod',
     image,
     filefonts,
     filestatic,
-    fileslick,
+    fileslickfonts,
+    fileslickgif,
     htmlblogMin,
     scriptAppMin,
     gulp.parallel(

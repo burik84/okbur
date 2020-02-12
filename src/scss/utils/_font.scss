@@ -4,6 +4,7 @@
   src: url("../fonts/Lora-Regular.eot?#iefix") format('embedded-opentype'), url("../fonts/Lora-Regular.woff") format('woff'), url("../fonts/Lora-Regular.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Regular';
@@ -11,6 +12,7 @@
   src: url("../fonts/Roboto-Regular.eot?#iefix") format('embedded-opentype'), url("../fonts/Roboto-Regular.woff") format('woff'), url("../fonts/Roboto-Regular.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Light';
@@ -18,6 +20,7 @@
   src: url("../fonts/Roboto-Light.eot?#iefix") format('embedded-opentype'), url("../fonts/Roboto-Light.woff") format('woff'), url("../fonts/Roboto-Light.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Bold';
@@ -25,4 +28,5 @@
   src: url("../fonts/Roboto-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/Roboto-Bold.woff") format('woff'), url("../fonts/Roboto-Bold.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }

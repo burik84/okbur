@@ -112,8 +112,9 @@ function htmlMin() {
     .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
     .pipe(htmlmin({
-      collapseWhitespace: true
-    })) //удаляем все лишнее и минимизируем файлы
+      collapseWhitespace: true, // удаляем все переносы
+      removeComments: true // удаляем все комментарии
+    }))
     .pipe(gulp.dest(paths.build.html)) // выкладывание готовых файлов
     .pipe(browserSync.stream()); // перезагрузка сервера
 }
@@ -132,8 +133,9 @@ function htmlblogMin() {
     .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) //Прогоним через rigger - собираем файлы template в один
     .pipe(htmlmin({
-      collapseWhitespace: true
-    })) //удаляем все лишнее и минимизируем файлы
+      collapseWhitespace: true, // удаляем все переносы
+      removeComments: true // удаляем все комментарии
+    }))
     .pipe(gulp.dest(paths.build.htmlblog)) // выкладывание готовых файлов
     .pipe(browserSync.stream()); // перезагрузка сервера
 }

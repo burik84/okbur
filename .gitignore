@@ -1,7 +1,3 @@
-/.git/
-/node_modules/
-/dist/
-/prod/
-/ver.1/images/
-/src/img/
-/images/
+**/node_modules/
+**/dist/
+**/prod/
